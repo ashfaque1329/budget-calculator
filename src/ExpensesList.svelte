@@ -14,10 +14,10 @@
 <section>
   <SectionTitle title="expense list" />
   <ul>
-    {#each expenses as expense, index}
-      <Expense {expense} />
+    {#each expenses as expense, index (expense.id)}
+      <Expense {expense} on:delete />
     {:else}
-      <h2>Sorry, no expense for you!</h2>
+      <h2>No expenses added to the list!</h2>
     {/each}
   </ul>
 
